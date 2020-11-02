@@ -52,6 +52,7 @@ public abstract class Bird {
                 ", layEggs=" + layEggs +
                 '}';
     }
-    abstract void fly();
+
+    protected abstract void fly();
 
 }
