@@ -1,6 +1,6 @@
-package OOP.Inheritance.Task1Birds.FlyingBirds;
+package com.oop.Inheritance.task1birds.FlyingBirds;
 
-import OOP.Inheritance.Task1Birds.Bird;
+import com.oop.Inheritance.task1birds.Bird;
 
 public class FlyingBird extends Bird {
     @Override

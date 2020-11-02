@@ -1,4 +1,4 @@
-package OOP.Inheritance.Task1Birds.FlyingBirds;
+package com.oop.Inheritance.task1birds.FlyingBirds;
 
 public class Eagle extends FlyingBird{
     @Override

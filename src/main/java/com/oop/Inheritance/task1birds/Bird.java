@@ -1,4 +1,4 @@
-package OOP.Inheritance.Task1Birds;
+package com.oop.Inheritance.task1birds;
 
 import java.util.Objects;
 
