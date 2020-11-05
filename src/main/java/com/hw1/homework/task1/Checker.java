@@ -1,7 +1,5 @@
 package com.hw1.homework.task1;
 
-import java.io.IOException;
-
 /**
  * Даны вещественные положительные числа a, b, c, x, y.
  * Выяснить пройдет ли кирпич с ребрами a, b, c в прямоугольное отверстие
@@ -15,35 +13,14 @@ import java.io.IOException;
 public class Checker {
     public static void main(String[] args) {
 
-        Brick brick = new Brick();
-        Hole hole = new Hole();
-        try {
-            brick.setSideA();
-        } catch (IOException e) {
-          e.getStackTrace();
-        }
-        try {
-            brick.setSideB();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            brick.setSideC();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        Brick brick = Brick.inputBrickSides();
+        Hole hole = Hole.inputHoleSize();
+        check(brick, hole);
 
-        try {
-            hole.setSideX();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
-        try {
-            hole.setSideY();
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
 
+    }
+
+    static void check(Brick brick, Hole hole) {
         if ((brick.getSideA() < hole.getSideX()) && (brick.getSideC() < hole.getSideY()) ||
                 (brick.getSideA() < hole.getSideY() && brick.getSideA() < hole.getSideX())) {
             System.out.println("The brick with sides\n" + "a = " + brick.getSideA()
@@ -53,8 +30,6 @@ public class Checker {
         } else {
             System.out.println("The brick is bigger than hole(");
         }
-
-
     }
 }
 

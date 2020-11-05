@@ -6,11 +6,8 @@ import java.io.InputStreamReader;
 import java.util.Objects;
 
 public class Hole {
-    private int sideX;
-    private int sideY;
-
-    public Hole() {
-    }
+    private final int sideX;
+    private final int sideY;
 
     public Hole(int sideX, int sideY) {
         this.sideX = sideX;
@@ -21,21 +18,11 @@ public class Hole {
         return sideX;
     }
 
-    public void setSideX() throws IOException {
-        BufferedReader valX = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("Enter the value of x: ");
-        this.sideX = Integer.parseInt(valX.readLine());
-    }
 
     public int getSideY() {
         return sideY;
     }
 
-    public void setSideY() throws IOException {
-        BufferedReader valY = new BufferedReader(new InputStreamReader(System.in));
-        System.out.print("Enter the value of y: ");
-        this.sideY = Integer.parseInt(valY.readLine());
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -56,5 +43,25 @@ public class Hole {
         return "Hole:" +
                 "sideX=" + sideX +
                 ", sideY=" + sideY;
+    }
+
+    public static Hole inputHoleSize() {
+        BufferedReader valX = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter the value of x: ");
+        int sideX = 0;
+        try {
+            sideX = Integer.parseInt(valX.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        BufferedReader valY = new BufferedReader(new InputStreamReader(System.in));
+        System.out.print("Enter the value of y: ");
+        int sideY = 0;
+        try {
+            sideY = Integer.parseInt(valY.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return new Hole(sideX, sideY);
     }
 }

@@ -6,11 +6,14 @@ import java.io.InputStreamReader;
 import java.util.Objects;
 
 public class Brick {
-    private int sideA;
-    private int sideB;
-    private int sideC;
+    private final int sideA;
+    private final int sideB;
+    private final int sideC;
 
-    public Brick() {
+    public Brick(int sideA, int sideB, int sideC) {
+        this.sideA = sideA;
+        this.sideB = sideB;
+        this.sideC = sideC;
     }
 
     public int getSideA() {
@@ -18,31 +21,14 @@ public class Brick {
 
     }
 
-    public void setSideA() throws IOException {
-        BufferedReader valA = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter the value of a: ");
-        this.sideA = Integer.parseInt(valA.readLine());
-    }
-
     public int getSideB() {
         return sideB;
-    }
-
-    public void setSideB() throws IOException {
-        BufferedReader valB = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter the value of B: ");
-        this.sideB = Integer.parseInt(valB.readLine());
     }
 
     public int getSideC() {
         return sideC;
     }
 
-    public void setSideC() throws IOException {
-        BufferedReader valC = new BufferedReader(new InputStreamReader(System.in));
-        System.out.println("Enter the value of c: ");
-        this.sideC = Integer.parseInt(valC.readLine());
-    }
 
     @Override
     public boolean equals(Object o) {
@@ -66,4 +52,36 @@ public class Brick {
                 ", sideB=" + sideB +
                 ", sideC=" + sideC;
     }
+
+    public static Brick inputBrickSides() {
+        BufferedReader valA = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter the value of a: ");
+        int sideA = 0;
+        try {
+            sideA = Integer.parseInt(valA.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        BufferedReader valB = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter the value of B: ");
+        int sideB = 0;
+        try {
+            sideB = Integer.parseInt(valB.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        BufferedReader valC = new BufferedReader(new InputStreamReader(System.in));
+        System.out.println("Enter the value of c: ");
+        int sideC = 0;
+        try {
+            sideC = Integer.parseInt(valC.readLine());
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        return new Brick(sideA, sideB, sideC);
+    }
+
 }
+
