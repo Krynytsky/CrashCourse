@@ -9,18 +9,40 @@ import java.io.IOException;
  * чтобы каждое из его ребер было параллельно или перпендикулярно каждой из
  * сторон отверстия.
  * v 5.11
+ *
  * @Author: Yurii Krynytskyi
  */
 public class Checker {
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
 
         Brick brick = new Brick();
         Hole hole = new Hole();
-        brick.setSideA();
-        brick.setSideB();
-        brick.setSideC();
-        hole.setSideX();
-        hole.setSideY();
+        try {
+            brick.setSideA();
+        } catch (IOException e) {
+          e.getStackTrace();
+        }
+        try {
+            brick.setSideB();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            brick.setSideC();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+
+        try {
+            hole.setSideX();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
+        try {
+            hole.setSideY();
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
         if ((brick.getSideA() < hole.getSideX()) && (brick.getSideC() < hole.getSideY()) ||
                 (brick.getSideA() < hole.getSideY() && brick.getSideA() < hole.getSideX())) {

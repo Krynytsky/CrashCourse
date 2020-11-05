@@ -6,17 +6,11 @@ import java.io.InputStreamReader;
 import java.util.Objects;
 
 public class Brick {
-    private int sideA ;
-    private int sideB ;
-    private int sideC ;
+    private int sideA;
+    private int sideB;
+    private int sideC;
 
     public Brick() {
-    }
-
-    public Brick(int sideA, int sideB, int sideC) {
-        this.sideA = sideA;
-        this.sideB = sideB;
-        this.sideC = sideC;
     }
 
     public int getSideA() {
@@ -27,7 +21,7 @@ public class Brick {
     public void setSideA() throws IOException {
         BufferedReader valA = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter the value of a: ");
-        this.sideA =Integer.parseInt(valA.readLine());
+        this.sideA = Integer.parseInt(valA.readLine());
     }
 
     public int getSideB() {
@@ -37,7 +31,8 @@ public class Brick {
     public void setSideB() throws IOException {
         BufferedReader valB = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter the value of B: ");
-        this.sideB =Integer.parseInt(valB.readLine());    }
+        this.sideB = Integer.parseInt(valB.readLine());
+    }
 
     public int getSideC() {
         return sideC;
@@ -46,7 +41,8 @@ public class Brick {
     public void setSideC() throws IOException {
         BufferedReader valC = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter the value of c: ");
-        this.sideC =Integer.parseInt(valC.readLine());    }
+        this.sideC = Integer.parseInt(valC.readLine());
+    }
 
     @Override
     public boolean equals(Object o) {
