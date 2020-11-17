@@ -46,6 +46,7 @@ public class Hole {
     }
 
     public static Hole inputHoleSize() {
+        System.out.println("Now you could enter values of the Hole size");
         BufferedReader valX = new BufferedReader(new InputStreamReader(System.in));
         System.out.print("Enter the value of x: ");
         int sideX = 0;

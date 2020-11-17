@@ -54,6 +54,7 @@ public class Brick {
     }
 
     public static Brick inputBrickSides() {
+        System.out.println("Now you could enter values of the Brick sides");
         BufferedReader valA = new BufferedReader(new InputStreamReader(System.in));
         System.out.println("Enter the value of a: ");
         int sideA = 0;
